@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+selenium-remote/packages/
+selenium-remote/selenium-remote/obj/
+selenium-remote/selenium-remote/bin/
