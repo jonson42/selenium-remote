@@ -33,30 +33,34 @@ namespace selenium_remote
 
         public void StartWithDictionNary(Dictionary<string,string> list)
         {
-            foreach(var item in list)
+            for(var i = 0; i < Int32.Parse(list["Repeat"]);i++)
             {
-                switch (item.Key)
+                foreach (var item in list)
                 {
-                    case "GoToPage":
-                        GoToPage(item.Value);
-                        break;
-                    case "ClickClass":
-                        CLickClass(item.Value);
-                        break;
-                    case "ClickId":
-                        ClickId(item.Value);
-                        break;
-                    case "ClickByJavascript":
-                        ClickJavascript(item.Value);
-                        break;
-                    case "SetCookie":
-                        SetCookie(item.Value);
-                        break;
-                    case "OpenNewTabWithLink":
-                        OpenNewTabWithLink(item.Value);
-                        break;
+                    switch (item.Key)
+                    {
+                        case "GoToPage":
+                            GoToPage(item.Value);
+                            break;
+                        case "ClickClass":
+                            CLickClass(item.Value);
+                            break;
+                        case "ClickId":
+                            ClickId(item.Value);
+                            break;
+                        case "ClickByJavascript":
+                            ClickJavascript(item.Value);
+                            break;
+                        case "SetCookie":
+                            SetCookie(item.Value);
+                            break;
+                        case "OpenNewTabWithLink":
+                            OpenNewTabWithLink(item.Value);
+                            break;
+                    }
                 }
             }
+            
         }
         private void CLickClass(string value)
         {
