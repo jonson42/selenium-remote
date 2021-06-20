@@ -62,9 +62,6 @@ namespace selenium_remote
 
         public bool StartWithDictionNary(List<List<string>> list,Dictionary<string,string> dataFill,List<string> listSearch)
         {
-            var loop = Int32.Parse(list[0][1].Replace(".0", ""));
-            for(int i = 0; i < loop; i++)
-            {
                 foreach (var item in list)
                 {
                     switch (item[0])
@@ -124,7 +121,6 @@ namespace selenium_remote
                             break;
                     }
                 }
-            }
             
             return true;
             Exit:
