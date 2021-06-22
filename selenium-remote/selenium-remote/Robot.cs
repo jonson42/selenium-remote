@@ -249,6 +249,19 @@ namespace selenium_remote
         }
         private void UserJavascript(string value, Dictionary<string, string> dataFill)
         {
+            bool process = false;
+            try
+            {
+                var valueStr = "document.getElementsByClassName(\"style-scope ytd-toggle-button-renderer style-default-active\")[6].getElementsByClassName(\"style-scope yt-icon-button\")[0].getAttribute(\"aria-pressed\");";
+                IJavaScriptExecutor js = (IJavaScriptExecutor)_webDriver;
+                bool.TryParse(js.ExecuteScript(valueStr).ToString(),out process);
+            }
+            catch{}
+
+            if (process)
+            {
+                return;
+            }
             var actionCommand = value.Split('|')[0];
             var valueInput = "";
             if (value.Split('|').Length > 1)
