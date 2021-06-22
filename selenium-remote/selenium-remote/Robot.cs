@@ -322,7 +322,7 @@ namespace selenium_remote
         {
             try
             {
-                if (_webDriver.WindowHandles.Count > 2)
+                if (_webDriver.WindowHandles.Count >= 2)
                 {
                     _webDriver.SwitchTo().Window(_webDriver.WindowHandles.Last());
                     _webDriver.Close();
